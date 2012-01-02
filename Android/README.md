@@ -14,7 +14,7 @@ Add the "src" folder to your java classpath.
 ## How to use the plugin ##
 
 var ft = new window.plugins.phoneLoad.FileTransfer();<br/>
-ft.download(url, successCB, errorCB);<br/>
+ft.download(url, target, successCB, errorCB);<br/>
 
 The successCB callback is periodically provided with a FileDownloadResult object that looks like this:
 
