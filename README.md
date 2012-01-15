@@ -1,15 +1,24 @@
 # PhoneLoad plugin #
-This plugin provides you with an advanced FileTransfer interface
+This plugin provides you with an advanced FileTransfer interface. It makes it possible to retrieve status information of a currently running download through a callback and allows you to cancel a running transfer as well. We have added that functionality to the upload function as well, but currently only for the iOS version. Use at your own risk. :o)
 
 ## Add the plugin to your project ##
 
+### Android ###
 Load the JavaScript code in your HTML file:
 &lt;script src="phonegap-phoneload-android.js"&gt;&lt;/script&gt;<br/>
 
 Add this line to res/plugins.xml:
-&lt;plugin name="StatusBarNotification" value="com.phonegap.plugins.statusBarNotification.StatusBarNotification"/&gt;<br/>
+&lt;plugin name="PhoneLoad" value="biz.sawatzki.phoneload.PhoneLoad"/&gt;<br/>
 
 Add the "src" folder to your java classpath.
+
+### iOS ###
+Load the JavaScript code in your HTML file:
+&lt;script src="phonegap-phoneload-ios.js"&gt;&lt;/script&gt;<br/>
+
+Add "PhoneLoad.m" and "PhoneLoad.h" to the "Plugins" directory in your Xcode project.
+Open PhoneGap.plist in your project's "Supporting Files" folder and add a new entry to the "Plugins" dictionary: Use "biz.sawatzki.phoneload" as key and "PhoneLoad" as value (type is "String").
+
 
 ## How to use the plugin ##
 
