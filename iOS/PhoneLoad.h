@@ -14,7 +14,7 @@
 #define UPLOAD      0
 #define DOWNLOAD    1
 
-@interface KMSFileTransfer : PGPlugin 
+@interface PhoneLoad : PGPlugin 
 {
     
 }
@@ -32,11 +32,11 @@
 @end;
 
 
-@interface KMSFileTransferDelegate : NSObject 
+@interface PhoneLoadDelegate : NSObject 
 {
     BOOL                isUpDown;               // if 0 then upload, if 1 then download
     NSMutableData *     receivedData;
-	KMSFileTransfer*    command;
+	PhoneLoad*          command;
 	NSString*           callbackId;
 	NSString*           source;
 	NSString*           target;
@@ -48,7 +48,7 @@
 - (NSMutableDictionary *)makeSuccessCallbackData:(BOOL) isFinished;
 
 @property (nonatomic, retain) NSMutableData* receivedData;
-@property (nonatomic, retain) KMSFileTransfer* command;
+@property (nonatomic, retain) PhoneLoad* command;
 @property (nonatomic, retain) NSString* callbackId;
 @property (nonatomic, retain) NSString* source;
 @property (nonatomic, retain) NSString* target;

@@ -7,7 +7,7 @@
  * Copyright (c) 2011, IBM Corporation
  */
 
-#import "KMSFileTransfer.h"
+#import "PhoneLoad.h"
 #import <PhoneGap/File.h>
 
 
@@ -20,7 +20,7 @@ typedef int FileTransferError;
 
 static NSMutableDictionary * g_ConnectionTable = nil;
 
-@implementation KMSFileTransfer
+@implementation PhoneLoad
 
 
 /********************************************   Upload   ***********************************************************************/
@@ -144,7 +144,7 @@ static NSMutableDictionary * g_ConnectionTable = nil;
 	[req setHTTPBody:postBody];
     
 	
-	KMSFileTransferDelegate* delegate = [[[KMSFileTransferDelegate alloc] init] autorelease];
+	PhoneLoadDelegate* delegate = [[[PhoneLoadDelegate alloc] init] autorelease];
     delegate.isUpDown = UPLOAD;
 	delegate.command = self;
     delegate.callbackId = callbackId;
@@ -189,7 +189,7 @@ static NSMutableDictionary * g_ConnectionTable = nil;
                                                   cachePolicy:NSURLRequestUseProtocolCachePolicy
                                               timeoutInterval:60.0];
         
-        KMSFileTransferDelegate * downloadDelegate = [[[KMSFileTransferDelegate alloc] init] autorelease];
+        PhoneLoadDelegate * downloadDelegate = [[[PhoneLoadDelegate alloc] init] autorelease];
         downloadDelegate.isUpDown = DOWNLOAD;
         downloadDelegate.command = self;
         downloadDelegate.callbackId = callbackId;
@@ -279,7 +279,7 @@ static NSMutableDictionary * g_ConnectionTable = nil;
 /*******************************************************************************************************************************/
                                     /*      The delegate for Transfering files      */
 
-@implementation KMSFileTransferDelegate
+@implementation PhoneLoadDelegate
 @synthesize callbackId, source, target, idString, receivedData, command, bytesCurrent, bytesTotal, isUpDown;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

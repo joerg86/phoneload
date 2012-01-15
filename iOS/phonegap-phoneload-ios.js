@@ -71,7 +71,7 @@
             return;
         }
 	
-        PhoneGap.exec(successCallback, errorCallback, 'com.phonegap.phoneload', 'upload', [options]);
+        PhoneGap.exec(successCallback, errorCallback, 'biz.sawatzki.phoneload', 'upload', [options]);
     };
 
 
@@ -87,7 +87,7 @@
         var microtime = new Date().getTime();
         this.id = PhoneGap.createUUID() + microtime;
         
-        PhoneGap.exec(successCallback, errorCallback, 'com.phonegap.phoneload', 'download', [source, target, this.id]);
+        PhoneGap.exec(successCallback, errorCallback, 'biz.sawatzki.phoneload', 'download', [source, target, this.id]);
     };
 
 /**
@@ -95,7 +95,7 @@
  */
     PhoneLoad.prototype.FileTransfer.prototype.cancel = function(successCallback)
     {
-        PhoneGap.exec(successCallback, null, 'com.phonegap.phoneload','cancel',[this.id]);
+        PhoneGap.exec(successCallback, null, 'biz.sawatzki.phoneload','cancel',[this.id]);
     };
 
 
